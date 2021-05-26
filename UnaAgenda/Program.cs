@@ -14,6 +14,7 @@ namespace UnaAgenda
     //      - DNI inválido (> máximo)
     //      - Apellido en blanco
     //      - Apellido con números
+    //      - etc...
 
     //  - Baja de una persona existente
     //  - Modificación de una persna con datos válidos
