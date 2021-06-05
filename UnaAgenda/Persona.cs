@@ -42,7 +42,6 @@ namespace UnaAgenda
         {
             // Se crea una PERSONA
             var persona = new Persona();
-
             Console.WriteLine("Nueva persona");
             persona.DNI = IngresarDNI();
             persona.Apellido = Ingreso("Ingrese el apellido");
@@ -50,7 +49,6 @@ namespace UnaAgenda
             persona.Direccion = Ingreso("Ingrese la dirección", permiteNumeros: true);
             persona.Telefono = Ingreso("Ingrese el teléfono", permiteNumeros: true);
             persona.FechaDeNacimiento = IngresarFecha("Ingrese la fecha de nacimiento");
-
             return persona;
         }
 
@@ -164,9 +162,7 @@ namespace UnaAgenda
                     Console.WriteLine("El DNI indicado ya existe en agenda");
                     continue;
                 }
-
                 return dni;
-
             } while (true);
         }
 
@@ -199,7 +195,6 @@ namespace UnaAgenda
                 return false;
             }
             return true;
-
         }
 
         // VALIDACION FECHA
@@ -246,11 +241,8 @@ namespace UnaAgenda
                 {
                     titulo += " o presione [Enter] para continuar";
                 }
-
                 Console.WriteLine(titulo);
-
-                ingreso = Console.ReadLine();
-                
+                ingreso = Console.ReadLine();     
                 if (!obligatorio && string.IsNullOrWhiteSpace(ingreso))
                 {
                     return null; 
@@ -267,12 +259,10 @@ namespace UnaAgenda
                     Console.WriteLine("El valor ingresado no debe contener números");
                     continue;
                 }
-
                 break;
-
             } while(true);
-
             return ingreso;
         }
+        
     }
 }
