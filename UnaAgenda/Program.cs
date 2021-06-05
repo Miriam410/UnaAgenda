@@ -62,30 +62,36 @@ namespace UnaAgenda
                     case "4":
                         Buscar();
                         break;
-                    case "9":
+                    case "5":
                         salir = true;
                         break;
                     default:
                         Console.WriteLine("No ha ingresado una opción del menú");
                         break;
                 }
-
             } while (!salir);
-
         }
 
-        private static void Buscar()
-        {
-            var persona = Agenda.Seleccionar();
-            persona?.Mostrar();
-        }
-
+        // 1- Alta
         private static void Alta()
         {
             var persona = Persona.IngresarNueva();
             Agenda.Agregar(persona);
         }
-
+        
+        // 2- Modificar
+        private static void Modificar()
+        {
+            var persona = Agenda.Seleccionar();
+            if (persona == null)
+            {
+                return;
+            }
+            persona.Mostrar();
+            persona.Modificar();
+        }
+        
+        // 3- Baja
         private static void Baja()
         {
             var persona = Agenda.Seleccionar();
@@ -102,16 +108,12 @@ namespace UnaAgenda
                 Console.WriteLine($"{persona.TituloEntrada} ha sido dada de baja");
             }
         }
-
-        private static void Modificar()
+        
+        // 4- Buscar
+        private static void Buscar()
         {
             var persona = Agenda.Seleccionar();
-            if (persona == null)
-            {
-                return;
-            }
-            persona.Mostrar();
-            persona.Modificar();
-        }
+            persona?.Mostrar();
+        } 
     }
 }
