@@ -36,7 +36,6 @@ namespace UnaAgenda
                         entradas.Add(persona.DNI, persona);
                     }
                 }
-
             }
         }
         
@@ -73,7 +72,6 @@ namespace UnaAgenda
                     return persona;
                 }
             }
-
             Console.WriteLine("No se ha encontrado una persona que coincida");
             return null;
         }
@@ -91,5 +89,6 @@ namespace UnaAgenda
                 }
             }
         }
+        
     }
 }
